@@ -34,6 +34,10 @@ VoltEdge Electronics suffered a **50% decline in total revenue**, dropping from 
 
 - **E-Commerce Growth**: Online sales **grew steadily, reaching 22.3% of total revenue** in 2020, but remain underdeveloped. However, **delivery efficiency improved significantly**, reducing the **average delivery time from 7.3 days (2016) to 4 days (2020)**.
 
+
+A two-page interactive dashboard tracking sales performance is available [here](https://public.tableau.com/app/profile/dung.duong.huynh5892/viz/GlobalElectronicsRetailerSalesDashboard/SalesPerformanceOverview).
+
+
 ## Insights Deep Dive
 ### i. Sales performance Overview
 - **Annual Revenue Decline**: 50% drop **from $19.8M (2019) to $9.2M (2020)**.
@@ -45,6 +49,6 @@ VoltEdge Electronics suffered a **50% decline in total revenue**, dropping from 
 - **Seasonality Trends**: Sales patterns remained consistent, with **peaks in February and December**, and a **trough in April**, although absolute figures were significantly lower than the previous two years.
 
 Figure 2: Monthly sales by year: 2018-2020
-![Monthly Sales by Year_ 2018-2020](https://github.com/user-attachments/assets/e5b547a4-28b0-45d0-8aa1-cd40c2a416f1)
+![Monthly Sales by Year_ 2018-2020](https://github.com/user-attachments/assets/90021a37-8c75-4bb2-b63d-6f6a155f38ec)
 
   
