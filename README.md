@@ -35,20 +35,53 @@ VoltEdge Electronics suffered a **50% decline in total revenue**, dropping from 
 - **E-Commerce Growth**: Online sales **grew steadily, reaching 22.3% of total revenue** in 2020, but remain underdeveloped. However, **delivery efficiency improved significantly**, reducing the **average delivery time from 7.3 days (2016) to 4 days (2020)**.
 
 
-A two-page interactive dashboard tracking sales performance is available <a href="https://public.tableau.com/app/profile/dung.duong.huynh5892/viz/GlobalElectronicsRetailerSalesDashboard/SalesPerformanceOverview" target="_blank">here</a>
+A two-page interactive dashboard tracking sales performance is available <a href="https://public.tableau.com/app/profile/dung.duong.huynh5892/viz/GlobalElectronicsRetailerSalesDashboard/SalesPerformanceOverview" target="_blank">here.</a>
 
 
 ## Insights Deep Dive
-### i. Sales performance Overview
+### 1. Sales performance Overview
 - **Annual Revenue Decline**: 50% drop **from $19.8M (2019) to $9.2M (2020)**.
 
 - **Gross Profit Decline**: Declined **from $10.7M to $5.45M**.
 
 - **Order Volume Decline**: Fell **from 9,083 orders in 2019 to 4,635 orders in 2020**.
 
-- **Seasonality Trends**: Sales patterns remained consistent, with **peaks in February and December**, and a **trough in April**, although absolute figures were significantly lower than the previous two years.
+- **Seasonality Trends**: Sales patterns remained consistent, with **peaks in February and December**, and a **trough in April**, although absolute figures were significantly lower than the previous two years (Figure 2).
 
-Figure 2: Monthly sales by year: 2018-2020
+*Figure 2: Monthly sales by year: 2018-2020*
 ![Monthly Sales by Year_ 2018-2020](https://github.com/user-attachments/assets/90021a37-8c75-4bb2-b63d-6f6a155f38ec)
 
-  
+### 2. Sales by Category Analysis
+
+**Best-Selling Categories:**
+
+- **Computers**: $3.7M revenue (highest-performing segment)
+
+- **Cell Phones**: $1.3M revenue
+
+- **Home Appliances**: $1.2M revenue
+
+**Lowest-Selling Categories:**
+
+- **Games & Toys**: $154K revenue
+
+- **Audio**: $453K revenue
+
+- **Music, Movies & Audiobooks**: $566K revenue
+
+**Market Insights:**
+
+Despite **increased digital entertainment consumption** (McKinsey, 2020)—with **49% of consumers watching more content, 36% gaming more, and 31% reading more** (Figure 3)— VoltEdge’s entertainment-related categories performed poorly. This highlights a **misalignment in marketing and product positioning** that needs to be addressed.
+
+*Figure 3*
+
+<img width="684" alt="Digital_content_consumption" src="https://github.com/user-attachments/assets/b1e402e3-0563-446b-b714-8ad4246c5386" />
+
+
+### 3. Retail Stores Performance
+
+- **Metric Used**: **Revenue per Square Meter (RPSM)** as a measure of store efficiency.
+
+Finding: Large stores generate higher total revenue but have lower efficiency. Figure 4 highlights ten stores that account for 28% of the total store area but have the lowest efficiency. These stores also have the highest total area, leading to high operational costs.
+
+*Figure 4*
