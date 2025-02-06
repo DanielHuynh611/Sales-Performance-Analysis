@@ -19,7 +19,7 @@ The analysis is based on data from five key tables:
 
 *Figure 1: Entity-Relationship Diagram (ERD) of the schema.*
 
-![Schema](Dataset/schema.drawio.png)
+![Schema](assets/schema.drawio.png)
 
 
 
@@ -45,5 +45,6 @@ VoltEdge Electronics suffered a **50% decline in total revenue**, dropping from 
 - **Seasonality Trends**: Sales patterns remained consistent, with **peaks in February and December**, and a **trough in April**, although absolute figures were significantly lower than the previous two years.
 
 Figure 2: Monthly sales by year: 2018-2020
+![Monthly Sales by Year_ 2018-2020](https://github.com/user-attachments/assets/e5b547a4-28b0-45d0-8aa1-cd40c2a416f1)
 
   
