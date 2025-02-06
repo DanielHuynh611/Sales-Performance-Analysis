@@ -14,10 +14,13 @@ The analysis is based on data from five key tables:
 
 5. **Exchange Rates**: Tracks currency exchange rates relative to the US dollar over time.
 
-Below is the entity-relationship diagram (ERD) of the schema.
 
+
+
+*Figure 1: Entity-Relationship Diagram (ERD) of the schema.*
 
 ![Schema](Dataset/schema.drawio.png)
+
 
 
 ## Executive Summary
@@ -30,3 +33,17 @@ VoltEdge Electronics suffered a **50% decline in total revenue**, dropping from 
 - **Retail Store Performance**: Large stores generated **higher total sales**, but were **less efficient**, as measured by **revenue per square meter (RPSM)**. The **bottom-performing 1/3 of stores, which account for 40% of total retail space, have significantly lower efficiency**.
 
 - **E-Commerce Growth**: Online sales **grew steadily, reaching 22.3% of total revenue** in 2020, but remain underdeveloped. However, **delivery efficiency improved significantly**, reducing the **average delivery time from 7.3 days (2016) to 4 days (2020)**.
+
+## Insights Deep Dive
+### i. Sales performance Overview
+- **Annual Revenue Decline**: 50% drop **from $19.8M (2019) to $9.2M (2020)**.
+
+- **Gross Profit Decline**: Declined **from $10.7M to $5.45M**.
+
+- **Order Volume Decline**: Fell **from 9,083 orders in 2019 to 4,635 orders in 2020**.
+
+- **Seasonality Trends**: Sales patterns remained consistent, with **peaks in February and December**, and a **trough in April**, although absolute figures were significantly lower than the previous two years.
+
+Figure 2: Monthly sales by year: 2018-2020
+
+  
