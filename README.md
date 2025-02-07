@@ -65,9 +65,11 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 - **Music, Movies & Audiobooks**: $566K revenue
 
+(Figure 3)
+
 **Market Insights:**
 
-- Despite **increased digital entertainment consumption** (McKinsey, 2020)—with **49% of consumers watching more content, 36% gaming more, and 31% reading more** (Figure 3)— VoltEdge’s entertainment-related categories performed poorly. This highlights a **misalignment in marketing and product positioning** that needs to be addressed.
+- Despite **increased digital entertainment consumption** (McKinsey, 2020)—with **49% of consumers watching more content, 36% gaming more, and 31% reading more** (Figure 4)— VoltEdge’s entertainment-related categories performed poorly. This highlights a **misalignment in marketing and product positioning** that needs to be addressed.
 
 *Figure 3: 2020 sales by product category*
 
