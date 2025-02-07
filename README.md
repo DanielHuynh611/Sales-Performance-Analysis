@@ -38,9 +38,9 @@ A two-page interactive dashboard tracking sales performance is available <a href
 ### 1. Sales performance Overview
 - **Annual Revenue Decline**: 50% drop **from $19.8M (2019) to $9.2M (2020)**.
 
-- **Gross Profit Decline**: Declined **from $10.7M to $5.45M**.
+- **Gross Profit**: Declined **from $10.7M to $5.45M**.
 
-- **Order Volume Decline**: Fell **from 9,083 orders in 2019 to 4,635 orders in 2020**.
+- **Order Volume**: Fell **from 9,083 orders in 2019 to 4,635 orders in 2020**.
 
 - **Seasonality Trends**: Sales patterns remained consistent, with **peaks in February and December**, and a **trough in April**, although absolute figures were significantly lower than the previous two years (Figure 2).
 
