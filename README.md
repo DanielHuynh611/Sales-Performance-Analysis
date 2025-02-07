@@ -34,6 +34,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 
 ## Findings and Discussions
+
 ### 1. Sales performance Overview
 - **Annual Revenue Decline**: 50% drop **from $19.8M (2019) to $9.2M (2020)**.
 
