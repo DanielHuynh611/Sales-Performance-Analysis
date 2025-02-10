@@ -49,7 +49,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 ### 2. Sales by Category Analysis
 
-**Best-Selling Categories:**
+**Best-Selling Categories (Figure 3):**
 
 - **Computers**: $3.7M revenue (highest-performing segment)
 
@@ -57,7 +57,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 - **Home Appliances**: $1.2M revenue
 
-**Lowest-Selling Categories:**
+**Lowest-Selling Categories (Figure 3):**
 
 - **Games & Toys**: $154K revenue
 
@@ -65,7 +65,6 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 - **Music, Movies & Audiobooks**: $566K revenue
 
-(Figure 3)
 
 **Market Insights:**
 
@@ -86,17 +85,20 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 - **Metric Used**: **Revenue per Square Meter (RPSM)** as a measure of store efficiency.
 
-- **Finding**: **Large stores generate higher total revenue but have lower efficiency**. Figure 4 highlights ten stores that account for **28% of the total store area but have the lowest efficiency**. These stores also have the highest total area, leading to high operational costs.
+- **Finding**: **Large stores generate higher total revenue but have lower efficiency**. Figure 5 highlights ten stores classified as "**Highest Total Area, Lowest Efficiency**". These stores account for **28% of the total store area**, resulting in disproportionately high operational costs. Additionally, these stores underperform in terms of **total revenue**. With the exception of Store 30, the other nine stores generate revenue that is either slightly above or below the median revenue for all stores (Figure 6).
 
 - **Implication**: Large stores with high operational costs and low efficiency need strategic intervention, such as closure, downsizing, or conversion to fulfillment hubs.
 
 *Figure 5: Ten stores with the largest area but lowest revenue per square meter.*
-![Ten_Least_Efficient_Stores](https://github.com/user-attachments/assets/fbf43c32-446d-4698-bfdb-7f9cb0ed3564)
+![Revenue Per Square Meter vs  Square Meter](https://github.com/user-attachments/assets/8ae99a32-2f8b-45d3-a21e-fc5aaf47e960)
+
+*Figure 6: The majority of these ten stores also underperform in terms of total revenue.*
+![Revenue by Stores](https://github.com/user-attachments/assets/b9881f35-7d00-4564-897f-ab879d00500b)
 
 ### 4. Online vs. In-store Sales Comparison
-- **E-Commerce Growth**: Online sales grew from **16.8% (2016) to 22.3% (2020)** of total revenue (Figure 6), but it remains **underdeveloped** compared to competitors.
+- **E-Commerce Growth**: Online sales grew from **16.8% (2016) to 22.3% (2020)** of total revenue (Figure 7), but it remains **underdeveloped** compared to competitors.
 
-- **Delivery Efficiency**: Average delivery time improved **from 7.3 days (2016) to 4.0 days (2018)** and has **remained stagnant at 4.0 days through 2020** (Figure 7), reflecting strong logistical readiness but limited recent progress, showing strong logistical readiness for further e-commerce expansion.
+- **Delivery Efficiency**: Average delivery time improved **from 7.3 days (2016) to 4.0 days (2018)** and has **remained stagnant at 4.0 days through 2020** (Figure 8), reflecting strong logistical readiness but limited recent progress, showing strong logistical readiness for further e-commerce expansion.
 
 - **Consumer Trends (Accenture, 2020)**:
 
@@ -104,15 +106,15 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
   - Consumers increasingly utilized **in-app purchases, home delivery, chat-based support, and other digital services**.
   
-  - These omnichannel habits will likely persist post-pandemic, making digital transformation crucial  (Figure 8).
+  - These omnichannel habits will likely persist post-pandemic, making digital transformation crucial  (Figure 9).
 
- *Figure 6: Gradual increase in the share of online sales as part of total sales (2016–2020).*
+ *Figure 7: Gradual increase in the share of online sales as part of total sales (2016–2020).*
 ![Share of Online and In-store Sales in Total Sales](https://github.com/user-attachments/assets/9ae9ef1e-a7e3-40b0-bdf0-696b4fbe0f94)
 
-*Figure 7: Improved delivery time from 2016 to 2020.*
+*Figure 8: Improved delivery time from 2016 to 2020.*
 ![Delivery Days Over Time](https://github.com/user-attachments/assets/00b9a59b-c345-46b4-8f03-5c7a6fc9ff3a)
 
-*Figure 8: Consumers using omnichannel services will continue*
+*Figure 9: Consumers using omnichannel services will continue*
 
 <img alt="Omnichannel_services_trend" src="https://github.com/user-attachments/assets/44112b71-abeb-4a2d-a849-180e5a36ff90" />
 
