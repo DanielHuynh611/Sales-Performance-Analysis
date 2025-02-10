@@ -118,7 +118,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 <img alt="Omnichannel_services_trend" src="https://github.com/user-attachments/assets/44112b71-abeb-4a2d-a849-180e5a36ff90" />
 
-## RECOMMENDATIONS
+## Recommendations
 
 ### 1. Diversify Product Categories
 
@@ -144,35 +144,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 VoltEdge Electronics’ performance in 2020 was significantly impacted by the COVID-19 crisis, leading to a 50% drop in revenue and declining sales across multiple categories. However, by focusing on e-commerce expansion, store optimization, and strategic product diversification, VoltEdge is well-positioned for recovery and long-term growth in 2021. Implementing these recommendations can potentially enable the company to adapt to changing consumer behaviors and build a more resilient operational model.
 
+## Reference
+Child, J., Farmer, R., Smith, T. R., & Tesvic, J. (2020, May 21). As physical doors close, new digital doors swing open. *McKinsey & Company*. https://www.mckinsey.com/industries/retail/our-insights/as-physical-doors-close-new-digital-doors-swing-open 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-https://www.mckinsey.com/industries/retail/our-insights/as-physical-doors-close-new-digital-doors-swing-open 
-https://www.accenture.com/content/dam/accenture/final/a-com-migration/manual/r3/pdf/pdf-127/Accenture-COVID-19-CGS-Pulse-Survey-Research-Wave-4.pdf 
+Accenture. (2020). *COVID-19 is Reshaping the Consumer Goods Industry:  Data-driven insights into consumer behavior reveal new and lasting trends* [Accenture COVID-19 Consumer Pulse Research – Wave 4]. https://www.accenture.com/content/dam/accenture/final/a-com-migration/manual/r3/pdf/pdf-127/Accenture-COVID-19-CGS-Pulse-Survey-Research-Wave-4.pdf 
