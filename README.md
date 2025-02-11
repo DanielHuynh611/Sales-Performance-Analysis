@@ -93,9 +93,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 ![Revenue Per Square Meter vs  Square Meter](https://github.com/user-attachments/assets/8ae99a32-2f8b-45d3-a21e-fc5aaf47e960)
 
 *Figure 6: The majority of these ten stores also underperform in terms of total revenue.*
-![Revenue by Stores](https://github.com/user-attachments/assets/18926eb6-15de-4f7a-83db-62dbe44e1314)
-
-
+![Revenue by Stores](https://github.com/user-attachments/assets/944d8a3a-cae5-4ed4-a7ce-6ebfc4df0905)
 
 ### 4. Online vs. In-store Sales Comparison
 - **E-Commerce Growth**: Online sales grew from **16.8% (2016) to 22.3% (2020)** of total revenue (Figure 7), but it remains **underdeveloped** compared to competitors.
@@ -114,10 +112,8 @@ A two-page interactive dashboard tracking sales performance is available <a href
 ![Share of Online and In-store Sales in Total Sales](https://github.com/user-attachments/assets/9ae9ef1e-a7e3-40b0-bdf0-696b4fbe0f94)
 
 *Figure 8: Improved delivery time from 2016 to 2020.*
-![Delivery Days Over Time](https://github.com/user-attachments/assets/00b9a59b-c345-46b4-8f03-5c7a6fc9ff3a)
 
 *Figure 9: Consumers using omnichannel services will continue*
-
 <img alt="Omnichannel_services_trend" src="https://github.com/user-attachments/assets/44112b71-abeb-4a2d-a849-180e5a36ff90" />
 
 ## Recommendations
