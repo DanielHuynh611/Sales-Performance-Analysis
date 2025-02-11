@@ -85,7 +85,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 - **Metric Used**: **Revenue per Square Meter (RPSM)** as a measure of store efficiency.
 
-- **Finding**: **Large stores generate higher total revenue but have lower efficiency**. Figure 5 highlights ten stores classified as "**Highest Total Area, Lowest Efficiency**". These stores account for **28% of the total store area**, resulting in disproportionately high operational costs. Additionally, these stores underperform in terms of **total revenue**. With the exception of Store 30, the other nine stores generate revenue that is either slightly above or below the median revenue for all stores (Figure 6).
+- **Finding**: **Large stores generate higher total revenue but have lower efficiency**. Figure 5 highlights ten stores classified as "**Highest Total Area, Lowest Efficiency**". These stores account for **28% of the total store area**, resulting in disproportionately high operational costs. Additionally, these stores underperform in terms of **total revenue**. With the exception of Store 30 and 31, the other eight stores generate revenue that is either at or below the median revenue for all stores (Figure 6).
 
 - **Implication**: Large stores with high operational costs and low efficiency need strategic intervention, such as closure, downsizing, or conversion to fulfillment hubs.
 
@@ -93,7 +93,9 @@ A two-page interactive dashboard tracking sales performance is available <a href
 ![Revenue Per Square Meter vs  Square Meter](https://github.com/user-attachments/assets/8ae99a32-2f8b-45d3-a21e-fc5aaf47e960)
 
 *Figure 6: The majority of these ten stores also underperform in terms of total revenue.*
-![Revenue by Stores](https://github.com/user-attachments/assets/b9881f35-7d00-4564-897f-ab879d00500b)
+![Revenue by Stores](https://github.com/user-attachments/assets/18926eb6-15de-4f7a-83db-62dbe44e1314)
+
+
 
 ### 4. Online vs. In-store Sales Comparison
 - **E-Commerce Growth**: Online sales grew from **16.8% (2016) to 22.3% (2020)** of total revenue (Figure 7), but it remains **underdeveloped** compared to competitors.
