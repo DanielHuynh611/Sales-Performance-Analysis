@@ -93,7 +93,6 @@ A two-page interactive dashboard tracking sales performance is available <a href
 ![Revenue Per Square Meter vs  Square Meter](https://github.com/user-attachments/assets/8ae99a32-2f8b-45d3-a21e-fc5aaf47e960)
 
 *Figure 6: The majority of these ten stores also underperform in terms of total revenue.*
-![Revenue by Stores](https://github.com/user-attachments/assets/944d8a3a-cae5-4ed4-a7ce-6ebfc4df0905)
 
 ### 4. Online vs. In-store Sales Comparison
 - **E-Commerce Growth**: Online sales grew from **16.8% (2016) to 22.3% (2020)** of total revenue (Figure 7), but it remains **underdeveloped** compared to competitors.
