@@ -122,7 +122,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 
 - **Mitigate Revenue Dependence**: The computer category accounts for a disproportionately high share of revenue. Diversifying product offerings will reduce over-reliance on a single category and mitigate associated risks.
 
-- **Target Growth Opportunities**: Low-performing categories, such as **Games & Toys** and **Audio**, are expected to see increased demand due to the COVID-19 lockdown and the rise of home entertainment. **Increasing inventory** and **allocating additional marketing budgets** to these categories is recommended to capitalize on emerging trends.
+- **Target Growth Opportunities**: Low-performing categories, such as **Games & Toys** and **Audio**, are expected to see increased demand due to the COVID-19 lockdown and the rise of home entertainment. **Increasing inventory** and **allocating additional marketing budgets** to these categories are recommended to capitalize on emerging trends.
 
 ### 2. Optimize Underperforming Stores
 
