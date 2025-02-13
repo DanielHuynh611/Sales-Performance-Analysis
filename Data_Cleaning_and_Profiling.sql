@@ -4,183 +4,6 @@
 
 
 
--- The 'customers' table
-
--- Question 1: How many customers do we have?
-SELECT COUNT(DISTINCT CustomerKey) AS total_customers
-FROM customers;
-
--- Question 2: ENTITY INTEGRITY assurance: Is there any duplicate in the primary key 'CustomerKey'?
-SELECT COUNT(*) - COUNT(DISTINCT CustomerKey) AS duplicates
-FROM customers;
-
--- Question 3: Is there any missing values in the table?
-SELECT
-	SUM(CASE WHEN CustomerKey IS NULL THEN 1 ELSE 0 END) AS customerkey_nulls,
-    SUM(CASE WHEN Gender IS NULL THEN 1 ELSE 0 END) AS gender_nulls,
-    SUM(CASE WHEN Name IS NULL THEN 1 ELSE 0 END) AS name_nulls,
-    SUM(CASE WHEN City IS NULL THEN 1 ELSE 0 END) AS city_nulls,
-    SUM(CASE WHEN `State Code` IS NULL THEN 1 ELSE 0 END) AS state_code_nulls,
-    SUM(CASE WHEN State IS NULL THEN 1 ELSE 0 END) AS state_nulls,
-    SUM(CASE WHEN `Zip code` IS NULL THEN 1 ELSE 0 END) AS zip_code_nulls,
-    SUM(CASE WHEN `Country` IS NULL THEN 1 ELSE 0 END) AS country_nulls,
-    SUM(CASE WHEN `Continent` IS NULL THEN 1 ELSE 0 END) AS continent_nulls,
-    SUM(CASE WHEN `Birthday` IS NULL THEN 1 ELSE 0 END) AS birthday_nulls
-FROM customers;
-
--- Question 4: What is the proportion of each gender?
-SELECT Gender, ROUND(COUNT(Gender)*100/(SELECT COUNT(*) FROM customers), 1) AS proportion
-FROM customers
-GROUP BY Gender;
-
--- Question 5: The list of Country-State in which customers live
-SELECT DISTINCT Country, State 
-FROM customers;
-
--- Data Cleaning: The 'Birthday' column is represented as text, this query generates a dataset with a cleaned 'Birthday' column.
-CREATE VIEW cleaned_customers AS
-SELECT CustomerKey, Gender, Name, City, `State Code`, State, `Zip Code`, Country, Continent, STR_TO_DATE(Birthday, '%m/%d/%Y') AS Birthday
-FROM customers;
-
--- Question 6: What is the distribution of customer age?
-SELECT  TRUNCATE(DATEDIFF('2021-01-01', Birthday)/365.25, -1) AS lower_limit,
-		TRUNCATE(DATEDIFF('2021-01-01', Birthday)/365.25, -1) + 10 AS upper_limit,
-        COUNT(*) AS customers_count
-FROM cleaned_customers
-GROUP BY lower_limit, upper_limit;
-
-
-
-
-
--- The 'products' table
-
--- Question 1: How many products do we have?
-SELECT COUNT(DISTINCT ProductKey) AS num_products
-FROM products;
-
--- Question 2: ENTITY INTEGRITY assurance: Is there any duplicate in the primary key 'ProductKey'?
-SELECT COUNT(*) - COUNT(DISTINCT ProductKey) AS dupllicates
-FROM products;
-
--- Question 3: Is there any missing value in this table?
-SELECT
-	SUM(CASE WHEN ProductKey IS NULL THEN 1 ELSE 0 END) AS productkey_nulls,
-    SUM(CASE WHEN `Product Name` IS NULL THEN 1 ELSE 0 END) AS productname_nulls,
-    SUM(CASE WHEN `Brand` IS NULL THEN 1 ELSE 0 END) AS brand_nulls,
-    SUM(CASE WHEN Color IS NULL THEN 1 ELSE 0 END) AS color_nulls,
-    SUM(CASE WHEN `Unit Price USD` IS NULL THEN 1 ELSE 0 END) AS unit_price_usd_nulls,
-    SUM(CASE WHEN SubcategoryKey IS NULL THEN 1 ELSE 0 END) AS subcategory_nulls,
-	SUM(CASE WHEN Subcategory IS NULL THEN 1 ELSE 0 END) AS subcategorykey_nulls,
-    SUM(CASE WHEN `Unit Cost USD` IS NULL THEN 1 ELSE 0 END) AS unit_cost_usd_nulls,
-    SUM(CASE WHEN CategoryKey IS NULL THEN 1 ELSE 0 END) AS categorykey_nulls,
-    SUM(CASE WHEN Category IS NULL THEN 1 ELSE 0 END) AS category_nulls
-FROM products;
-
--- Question 4: What are the distinct brands?
-SELECT DISTINCT Brand
-FROM products;
-
--- Data Cleaning: The "Unit Price USD" and "Unit Cost USD" columns have a leading "$" sign and are read as text rather than numeric, we will remove the "$" sign and 
--- then convert the data type of the column to numeric. We also want to remove the comma in the number.
-CREATE VIEW cleaned_products AS
-SELECT  ProductKey, `Product Name`, Brand, Color,
-		CAST(REPLACE(REPLACE(`Unit Cost USD`, "$", ""), ",", "") AS DOUBLE) AS "Unit Cost USD",
-        CAST(REPLACE(REPLACE(`Unit Price USD`, "$", ""), ",", "") AS DOUBLE) AS "Unit Price USD",
-        SubcategoryKey, Subcategory, CategoryKey, Category
-FROM products;
-        
--- Question 5: What are the distinct pair of Category: Subcategory?
-SELECT DISTINCT Category, Subcategory
-FROM cleaned_products
-ORDER BY Category;
-
--- Question 6: The distribution of "Unit Cost USD", "Unit Price USD", Profit Margin(ie. "Unit Cost USD", "Unit Price USD")
-
--- Unit Cost USD
-SELECT 
-	TRUNCATE(`Unit Cost USD`, -2) AS lower_limit,
-    TRUNCATE(`Unit Cost USD`, -2) + 100 AS upper_limit,
-    COUNT(*) AS product_counts
-FROM cleaned_products
-GROUP BY 1, 2
-ORDER BY 1;
-
--- Unit Price USD
-SELECT 
-	TRUNCATE(`Unit Price USD`, -2) AS lower_limit,
-    TRUNCATE(`Unit Price USD`, -2) + 100 AS upper_limit,
-    COUNT(*) AS product_counts
-FROM cleaned_products
-GROUP BY 1, 2
-ORDER BY 1;
-
--- Marginal Profit
-SELECT 
-	TRUNCATE((`Unit Price USD`-`Unit Cost USD`), -2) AS lower_limit,
-    TRUNCATE((`Unit Price USD`-`Unit Cost USD`), -2) + 100 AS upper_limit,
-    COUNT(*) AS product_counts
-FROM cleaned_products
-GROUP BY 1, 2
-ORDER BY 1;
-
-
-
-
-
--- The "stores" table
-
--- Data Cleaning: The "Open Date" column is represented as text instead of date, we want to change its data type and format
-CREATE VIEW cleaned_stores AS
-SELECT StoreKey, Country, State, `Square Meters`, STR_TO_DATE(`Open date`, '%m/%d/%Y') AS "Open Date"
-FROM stores;
-
--- Question 1: What are the number of stores in this database?
-SELECT COUNT(DISTINCT StoreKey) AS store_counts
-FROM cleaned_stores;
-
--- QUESTION 2:  ENTITY INTEGRITY assurance: Is there any duplication in the primary key "StoreKey"?
-SELECT COUNT(*) - COUNT(DISTINCT StoreKey) AS duplicates
-FROM cleaned_stores;
-
--- Question 3: Is there any missing value in this dataset?
-SELECT
-	SUM(CASE WHEN StoreKey IS NULL THEN 1 ELSE 0 END) AS storekey_nulls,
-    SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END) AS country_nulls,
-    SUM(CASE WHEN State IS NULL THEN 1 ELSE 0 END) AS state_nulls,
-    SUM(CASE WHEN `Square Meters` IS NULL THEN 1 ELSE 0 END) AS square_meters_nulls,
-    SUM(CASE WHEN `Open Date` IS NULL THEN 1 ELSE 0 END) AS open_date_nulls
-FROM cleaned_stores;
-    
--- Question 4: What is the range of "Square Meters"?
-SELECT MIN(`Square Meters`) AS min_sq_meters, MAX(`Square Meters`) AS max_sq_meters
-FROM cleaned_stores;
-
--- Question 5: What is the distribution of "Square Meters"?
-SELECT
-    CASE 
-		WHEN `Square Meters` BETWEEN 1 AND 500 THEN 1
-        WHEN `Square Meters` BETWEEN 501 AND 1000 THEN 2
-        WHEN `Square Meters` BETWEEN 1001 AND 1500 THEN 3
-		WHEN `Square Meters` BETWEEN 1501 AND 2000 THEN 4
-        ELSE 5
-	END AS "Group Index",
-	CASE 
-		WHEN `Square Meters` BETWEEN 1 AND 500 THEN "1-500"
-        WHEN `Square Meters` BETWEEN 501 AND 1000 THEN "501-1000"
-        WHEN `Square Meters` BETWEEN 1001 AND 1500 THEN "1001-1500"
-		WHEN `Square Meters` BETWEEN 1501 AND 2000 THEN "1501-2200"
-        ELSE ">2000" 
-	END AS "Group",
-    COUNT(*) AS store_counts
-FROM cleaned_stores
-GROUP BY 1, 2
-ORDER BY 1;
-
-
-
-
-
 -- The "sales" table
 
 -- Question 1: Is there any duplicate in the composite primary key "Order Number"-"Line Item"? (i.e. ENTITY INTEGRITY assurance)
@@ -273,6 +96,185 @@ FROM cleaned_sales;
 -- Question 4: MIN and MAX of the "Quantity" column
 SELECT MIN(Quantity) AS min_quantity, MAX(Quantity) AS max_quantity
 FROM sales;
+
+
+
+
+
+-- The 'products' table
+
+-- Question 1: How many products do we have?
+SELECT COUNT(DISTINCT ProductKey) AS num_products
+FROM products;
+
+-- Question 2: ENTITY INTEGRITY assurance: Is there any duplicate in the primary key 'ProductKey'?
+SELECT COUNT(*) - COUNT(DISTINCT ProductKey) AS dupllicates
+FROM products;
+
+-- Question 3: Is there any missing value in this table?
+SELECT
+	SUM(CASE WHEN ProductKey IS NULL THEN 1 ELSE 0 END) AS productkey_nulls,
+    SUM(CASE WHEN `Product Name` IS NULL THEN 1 ELSE 0 END) AS productname_nulls,
+    SUM(CASE WHEN `Brand` IS NULL THEN 1 ELSE 0 END) AS brand_nulls,
+    SUM(CASE WHEN Color IS NULL THEN 1 ELSE 0 END) AS color_nulls,
+    SUM(CASE WHEN `Unit Price USD` IS NULL THEN 1 ELSE 0 END) AS unit_price_usd_nulls,
+    SUM(CASE WHEN SubcategoryKey IS NULL THEN 1 ELSE 0 END) AS subcategory_nulls,
+	SUM(CASE WHEN Subcategory IS NULL THEN 1 ELSE 0 END) AS subcategorykey_nulls,
+    SUM(CASE WHEN `Unit Cost USD` IS NULL THEN 1 ELSE 0 END) AS unit_cost_usd_nulls,
+    SUM(CASE WHEN CategoryKey IS NULL THEN 1 ELSE 0 END) AS categorykey_nulls,
+    SUM(CASE WHEN Category IS NULL THEN 1 ELSE 0 END) AS category_nulls
+FROM products;
+
+-- Question 4: What are the distinct brands?
+SELECT DISTINCT Brand
+FROM products;
+
+-- Data Cleaning: The "Unit Price USD" and "Unit Cost USD" columns have a leading "$" sign and are read as text rather than numeric, we will remove the "$" sign and 
+-- then convert the data type of the column to numeric. We also want to remove the comma in the number.
+CREATE VIEW cleaned_products AS
+SELECT  ProductKey, `Product Name`, Brand, Color,
+		CAST(REPLACE(REPLACE(`Unit Cost USD`, "$", ""), ",", "") AS DOUBLE) AS "Unit Cost USD",
+        CAST(REPLACE(REPLACE(`Unit Price USD`, "$", ""), ",", "") AS DOUBLE) AS "Unit Price USD",
+        SubcategoryKey, Subcategory, CategoryKey, Category
+FROM products;
+        
+-- Question 5: What are the distinct pair of Category: Subcategory?
+SELECT DISTINCT Category, Subcategory
+FROM cleaned_products
+ORDER BY Category;
+
+-- Question 6: The distribution of "Unit Cost USD", "Unit Price USD", Profit Margin(ie. "Unit Cost USD", "Unit Price USD")
+
+-- Unit Cost USD
+SELECT 
+	TRUNCATE(`Unit Cost USD`, -2) AS lower_limit,
+    TRUNCATE(`Unit Cost USD`, -2) + 100 AS upper_limit,
+    COUNT(*) AS product_counts
+FROM cleaned_products
+GROUP BY 1, 2
+ORDER BY 1;
+
+-- Unit Price USD
+SELECT 
+	TRUNCATE(`Unit Price USD`, -2) AS lower_limit,
+    TRUNCATE(`Unit Price USD`, -2) + 100 AS upper_limit,
+    COUNT(*) AS product_counts
+FROM cleaned_products
+GROUP BY 1, 2
+ORDER BY 1;
+
+-- Marginal Profit
+SELECT 
+	TRUNCATE((`Unit Price USD`-`Unit Cost USD`), -2) AS lower_limit,
+    TRUNCATE((`Unit Price USD`-`Unit Cost USD`), -2) + 100 AS upper_limit,
+    COUNT(*) AS product_counts
+FROM cleaned_products
+GROUP BY 1, 2
+ORDER BY 1;
+
+
+
+
+
+-- The 'customers' table
+
+-- Question 1: How many customers do we have?
+SELECT COUNT(DISTINCT CustomerKey) AS total_customers
+FROM customers;
+
+-- Question 2: ENTITY INTEGRITY assurance: Is there any duplicate in the primary key 'CustomerKey'?
+SELECT COUNT(*) - COUNT(DISTINCT CustomerKey) AS duplicates
+FROM customers;
+
+-- Question 3: Is there any missing values in the table?
+SELECT
+	SUM(CASE WHEN CustomerKey IS NULL THEN 1 ELSE 0 END) AS customerkey_nulls,
+    SUM(CASE WHEN Gender IS NULL THEN 1 ELSE 0 END) AS gender_nulls,
+    SUM(CASE WHEN Name IS NULL THEN 1 ELSE 0 END) AS name_nulls,
+    SUM(CASE WHEN City IS NULL THEN 1 ELSE 0 END) AS city_nulls,
+    SUM(CASE WHEN `State Code` IS NULL THEN 1 ELSE 0 END) AS state_code_nulls,
+    SUM(CASE WHEN State IS NULL THEN 1 ELSE 0 END) AS state_nulls,
+    SUM(CASE WHEN `Zip code` IS NULL THEN 1 ELSE 0 END) AS zip_code_nulls,
+    SUM(CASE WHEN `Country` IS NULL THEN 1 ELSE 0 END) AS country_nulls,
+    SUM(CASE WHEN `Continent` IS NULL THEN 1 ELSE 0 END) AS continent_nulls,
+    SUM(CASE WHEN `Birthday` IS NULL THEN 1 ELSE 0 END) AS birthday_nulls
+FROM customers;
+
+-- Question 4: What is the proportion of each gender?
+SELECT Gender, ROUND(COUNT(Gender)*100/(SELECT COUNT(*) FROM customers), 1) AS proportion
+FROM customers
+GROUP BY Gender;
+
+-- Question 5: The list of Country-State in which customers live
+SELECT DISTINCT Country, State 
+FROM customers;
+
+-- Data Cleaning: The 'Birthday' column is represented as text, this query generates a dataset with a cleaned 'Birthday' column.
+CREATE VIEW cleaned_customers AS
+SELECT CustomerKey, Gender, Name, City, `State Code`, State, `Zip Code`, Country, Continent, STR_TO_DATE(Birthday, '%m/%d/%Y') AS Birthday
+FROM customers;
+
+-- Question 6: What is the distribution of customer age?
+SELECT  TRUNCATE(DATEDIFF('2021-01-01', Birthday)/365.25, -1) AS lower_limit,
+		TRUNCATE(DATEDIFF('2021-01-01', Birthday)/365.25, -1) + 10 AS upper_limit,
+        COUNT(*) AS customers_count
+FROM cleaned_customers
+GROUP BY lower_limit, upper_limit;
+
+
+
+
+
+
+-- The "stores" table
+
+-- Data Cleaning: The "Open Date" column is represented as text instead of date, we want to change its data type and format
+CREATE VIEW cleaned_stores AS
+SELECT StoreKey, Country, State, `Square Meters`, STR_TO_DATE(`Open date`, '%m/%d/%Y') AS "Open Date"
+FROM stores;
+
+-- Question 1: What are the number of stores in this database?
+SELECT COUNT(DISTINCT StoreKey) AS store_counts
+FROM cleaned_stores;
+
+-- QUESTION 2:  ENTITY INTEGRITY assurance: Is there any duplication in the primary key "StoreKey"?
+SELECT COUNT(*) - COUNT(DISTINCT StoreKey) AS duplicates
+FROM cleaned_stores;
+
+-- Question 3: Is there any missing value in this dataset?
+SELECT
+	SUM(CASE WHEN StoreKey IS NULL THEN 1 ELSE 0 END) AS storekey_nulls,
+    SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END) AS country_nulls,
+    SUM(CASE WHEN State IS NULL THEN 1 ELSE 0 END) AS state_nulls,
+    SUM(CASE WHEN `Square Meters` IS NULL THEN 1 ELSE 0 END) AS square_meters_nulls,
+    SUM(CASE WHEN `Open Date` IS NULL THEN 1 ELSE 0 END) AS open_date_nulls
+FROM cleaned_stores;
+    
+-- Question 4: What is the range of "Square Meters"?
+SELECT MIN(`Square Meters`) AS min_sq_meters, MAX(`Square Meters`) AS max_sq_meters
+FROM cleaned_stores;
+
+-- Question 5: What is the distribution of "Square Meters"?
+SELECT
+    CASE 
+		WHEN `Square Meters` BETWEEN 1 AND 500 THEN 1
+        WHEN `Square Meters` BETWEEN 501 AND 1000 THEN 2
+        WHEN `Square Meters` BETWEEN 1001 AND 1500 THEN 3
+		WHEN `Square Meters` BETWEEN 1501 AND 2000 THEN 4
+        ELSE 5
+	END AS "Group Index",
+	CASE 
+		WHEN `Square Meters` BETWEEN 1 AND 500 THEN "1-500"
+        WHEN `Square Meters` BETWEEN 501 AND 1000 THEN "501-1000"
+        WHEN `Square Meters` BETWEEN 1001 AND 1500 THEN "1001-1500"
+		WHEN `Square Meters` BETWEEN 1501 AND 2000 THEN "1501-2200"
+        ELSE ">2000" 
+	END AS "Group",
+    COUNT(*) AS store_counts
+FROM cleaned_stores
+GROUP BY 1, 2
+ORDER BY 1;
+
 
 
 
