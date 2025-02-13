@@ -1,4 +1,4 @@
--- This SQL script aim to reproduce all of the analysis in the "Dashboard.twb" and "Charts_for_Report.twb" files.
+-- This SQL script aims to reproduce all of the analysis in the "Dashboard.twb" and "Charts_for_Report.twb" files.
 
 
 -- Dashboard.twb
