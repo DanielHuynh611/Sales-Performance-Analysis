@@ -112,6 +112,7 @@ A two-page interactive dashboard tracking sales performance is available <a href
 ![Share of Online and In-store Sales in Total Sales](https://github.com/user-attachments/assets/9ae9ef1e-a7e3-40b0-bdf0-696b4fbe0f94)
 
 *Figure 8: Improved delivery time from 2016 to 2020.*
+![Delivery Days Over Time](https://github.com/user-attachments/assets/55d110ca-a6d0-431b-9b59-9d9b1f4f0f28)
 
 *Figure 9: Consumers using omnichannel services will continue*
 <img alt="Omnichannel_services_trend" src="https://github.com/user-attachments/assets/44112b71-abeb-4a2d-a849-180e5a36ff90" />
